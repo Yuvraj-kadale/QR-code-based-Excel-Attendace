@@ -6,7 +6,7 @@
 - In the `QR Codes` folder
 
 1. Update the data base in file `Data_base.txt`. Make sure each students name resides in a new line without any space.  
-![Data_base](./Reference/Data_base.jpg)  
+![Data_base](./Reference/data_base.jpg)  
 
 2. Run the `Generate_QR.py` file by double clicking on it.  
 ![Generate_qr](./Reference/Generate_QR.jpg)  
