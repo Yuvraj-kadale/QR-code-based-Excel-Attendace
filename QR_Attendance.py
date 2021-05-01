@@ -81,15 +81,15 @@ scan_time = []
 #Class_end = str(input("Noted!! At what time would you like to conclude your class? : "))
 Class_time = Class_start.get()+' - '+Class_end.get()
 #receiver_address=str(input("We would like to mail you the attendace sheet. \n please Enter you email address : "))
-print("Thanks! This attendace systeam is set for {0} class for {1} and attendace sheet will be mailed at {2}".format(
+print("Thanks! This attendance system is set for {0} class for {1} and attendance sheet will be mailed at {2}".format(
     Class_name.get(), Class_time, receiver_address.get()))
-file_name = Class_name.get()+' class '+' by '+Teacher.get()+'.xls'
+
 
 log_date = datetime.datetime.now()
 date_format = log_date.strftime("%d-%m-%Y")
 #Current_time = log_date.strftime("%I:%M:%S %p")
 #date_format=date_format.replace(':',' ')
-
+file_name = Class_name.get()+' '+date_format+'.xls'
 
 def Data_entry(student, log_date):
     if student in names:
