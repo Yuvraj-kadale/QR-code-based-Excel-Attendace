@@ -141,11 +141,10 @@ def writeExcel(names, date_format, Class_name, scan_time, Class_time, file_name)
 
 
 def send_mail(receiver_address, file_name):
-    mail_content = '''Hello,
-    This is a test mail.
-    In this mail I am sending attendance sheet.
-    The mail is sent using Python SMTP library.
-    Thank You'''
+    mail_content = '''Hello {0},
+    This is an auto-generated email.
+    Attendance sheet is attached in this mail.
+    Thank You'''.format(Teacher.get())
     # The mail addresses and password
     sender_address = config('Email')
     sender_pass = config('password')
@@ -153,7 +152,7 @@ def send_mail(receiver_address, file_name):
     message = MIMEMultipart()
     message['From'] = sender_address
     message['To'] = receiver_address
-    message['Subject'] = 'A test mail sent by Python. It has an attachment.'
+    message['Subject'] = 'Attendance Sheet : {0}'.format(file_name)
     # The subject line
     # The body and the attachments for the mail
     message.attach(MIMEText(mail_content, 'plain'))
@@ -189,7 +188,7 @@ while True:
 
         time.sleep(1)
 
-    cv2.imshow("QR_Frame", QR)
+    cv2.imshow("QR_Attendance", QR)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         cv2.destroyAllWindows()
